@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="header::headertemplate">
+
+<body>
+
+	<h1>Product list</h1>
+
+	<table>
+		<tr>
+			<th>NAME</th>
+			<th>PRICE</th>
+			<th>IN STOCK</th>
+			<th>COMMENTS</th>
+		</tr>
+		<tr th:each="prod : ${prods}" th:class="${prodStat.odd}? 'odd'">
+			<td th:text="${prod.name}">Onions</td>
+			<td th:text="${prod.price}">2.41</td>
+			<td th:text="${prod.inStock}? #{true} : #{false}">yes</td>
+			<td><span th:text="${#lists.size(prod.comments)}">2</span> comment/s
+				<a href="comments.html"
+				th:href="@{/product/comments(prodId=${prod.id})}"
+				th:if="${not #lists.isEmpty(prod.comments)}">view</a></td>
+		</tr>
+	</table>
+
+	<p>
+		<a href="../home.html" th:href="@{/}">Return to home</a>
+	</p>
+
+</body>
+
+</html>
+

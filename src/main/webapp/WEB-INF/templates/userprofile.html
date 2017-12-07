@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="header::headertemplate">
+
+<body>
+
+	<h1>User profile</h1>
+
+	<div th:object="${session.user}">
+		<p>
+			Name: <span th:text="*{firstName}">Name is not loaded...</span>.
+		</p>
+		<p>
+			Surname: <span th:text="*{lastName}">Last name is not
+				loaded...</span>.
+		</p>
+		<p>
+			Nationality: <span th:text="*{nationality}">Nationality is not
+				loaded...</span>.
+		</p>
+		<p>
+			Age: <span th:text="*{age}?: '(no age specified)'">Age is not
+				loaded...</span>.
+		</p>
+	</div>
+
+	<p>
+		<a href="home.html" th:href="@{/}">Return to home</a>
+	</p>
+
+</body>
+
+</html>
+

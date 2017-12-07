@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="header::headertemplate"></head>
+
+	<body>
+
+		<p th:utext="#{home.welcome (${session.user.name})}">Welcome to our
+			grocery store!</p>
+		<p>
+			Today is: <span th:text="${today}">14 February 2018</span>
+		</p>
+		<p>Select an option of your choice!!!</p>
+		<ol>
+			<li><a href="product/list.html" th:href="@{/product/list}">Product
+					List</a></li>
+			<li><a href="order/list.html" th:href="@{/order/list}">Order
+					List</a></li>
+			<li><a href="subscribe.html" th:href="@{/subscribe}">Subscribe
+					to our Newsletter</a></li>
+			<li><a href="userprofile.html" th:href="@{/userprofile}">See
+					User Profile</a></li>
+		</ol>
+
+	</body>
+
+</html>
