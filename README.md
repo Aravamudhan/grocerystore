@@ -1,3 +1,2 @@
 # Grocery store
-This is a skeleton of a full stack application that will be developed using JavaEE, Thymeleaf.
-
+This application was created based on the tutorial of [Thymeleaf](http://www.thymeleaf.org/).
